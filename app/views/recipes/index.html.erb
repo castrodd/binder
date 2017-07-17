@@ -1,0 +1,37 @@
+<!--<p id="notice"><%= notice %></p>-->
+
+<h1>Recipes</h1>
+<h3>By <%= @user %> </h3>
+-----------------------------
+-----------------------------
+<br>
+-----------------------------
+-----------------------------
+
+    <% count = 1 %>
+    <% @recipes.each do |rec| %>
+        <h2><strong><%= count %>. </strong><%= rec.title %></h2>
+
+        <ul>
+        <% rec.ingredients.split(',').each do |i| %>
+        <li><%= i %></li>
+
+        <% end %>
+        </ul>
+        <h2>Description:</h2>
+
+        <p><%= rec.description %></p>
+        -----------------------------
+        -----------------------------
+        <br>
+        -----------------------------
+        -----------------------------
+        <% count += 1 %>
+
+    <% end %>
+
+
+<br>
+
+<%= link_to 'New Recipe', new_recipe_path %> |
+<%= link_to 'Logout', logout_path %>

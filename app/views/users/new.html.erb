@@ -1,0 +1,17 @@
+<h1>Sign Up</h1>
+<p> <em>Binder</em> allows you to store your recipes...on the internet!</p>
+<%= form_with(model: @user, url: user_path(@user)) do |f| %>
+  <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <%= f.submit %>
+<% end %>
